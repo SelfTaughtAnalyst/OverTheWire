@@ -24,10 +24,10 @@ Simply put, SSH (Secure Shell) is a network protocol that allows you to connect 
 
 To use SSH, you'll need at least three pieces of information: where you're connecting to (the hostname or IP address of the host), who you're connecting as (the username), and a means of authentication (a password or public/private keys). We'll learn about public and private keys later on, so if you're not familiar with what they are, don't worry about it. SSH connects to port 22 by default. If you're connecting to a different port, you'll need to specify the port number. For Bandit, we'll primarily connect through port 2220.
 
-**Linux and Mac**\
+### Linux and Mac
 To SSH on Linux and Mac, open a terminal and use the SSH command with the following syntax: `ssh <username>@<hostname> -p <port>` or `ssh ssh://<username>@<hostname>:<port>`. So to access level 0, we'll enter the following: `ssh bandit0@bandit.labs.overthewire.org -p 2220` and use the password `bandit0` when it prompts us for it. If you get a message about the authenticity of host and fingerprints and don't know what to do, refer to the fingerprints section below.
 
-**Windows**\
+### Windows
 Traditionally, there wasn't a way to use SSH natively on Windows. You would have to download an SSH client like [PuTTY](https://www.putty.org/) or [CygWin](https://www.cygwin.com/) or look for PowerShell modules that would provide that functionality. Nowadays however, it looks like newer versions of Windows 10 have SSH support built in. I was able to use SSH in both Command Prompt and PowerShell with the following syntax: `ssh <username>@<hostname> -p <port>` or `ssh ssh://<username>@<hostname>:<port>`. So to access level 0, we'll enter the following: `ssh bandit0@bandit.labs.overthewire.org -p 2220` and use the password bandit0 when it prompts us for it. If you get a message about the authenticity of host and fingerprints and don't know what to do, refer to the fingerprints section below.
 
 If the SSH commands don't work for you right out of the box, you may have to do some setup. See https://www.howtogeek.com/336775/how-to-enable-and-use-windows-10s-built-in-ssh-commands/ for help.
@@ -38,7 +38,7 @@ If you have Git Bash installed, you can also use the command line to SSH from th
 
 The command to connect through Command Prompt/PowerShell/Git Bash is the same as Linux and Mac: `ssh bandit0@bandit.labs.overthewire.org -p 2220`. You should get a fingerprint prompt the first time you're connecting. After that, enter your password.
 
-**Fingerprints**\
+### Fingerprints
 If it's your first time connecting to a host, you should get a prompt warning about the authenticity of the host and asking you to confirm its fingerprint. This is a securty feature that helps ensure you know who you're connecting to.
 
 ```
